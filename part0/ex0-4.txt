@@ -1,0 +1,36 @@
+title 0.4 uusi muistiinpano
+
+note over selain: 
+User types in some content in text box and clicks "Save"
+end note
+selain->palvelin: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note (new note content in body of request)
+
+note over palvelin: 
+Server stores the note received in the body of the POST request
+end note
+
+palvelin-->selain: HTTP 302 (redirect to /notes)
+
+note over selain: 
+The notes page is rendered again due to the redirect
+end note
+
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+palvelin-->selain: HTML-koodi
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+palvelin-->selain: main.css
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+palvelin-->selain: main.js
+
+note over selain:
+Browser executes JS to retrieve
+JSON-data from server
+end note
+
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+palvelin-->selain: [{ content: "HTML on helppoa", date: "2019-01-01" }, ...]
+
+note over selain:
+Browser executes event handler to render
+JSON in the page
+end note

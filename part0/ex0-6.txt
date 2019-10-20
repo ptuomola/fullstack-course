@@ -1,0 +1,21 @@
+title 0.6 Single Page App - uusi muistiinpano
+
+note over selain:
+Käyttäjän painaessa "Save" selain 
+suorittaa rekisteröidyn tapahtumankäsittelijän
+end note
+
+note over selain:
+Tapahtumankäsittelijä lisää uuden muistiinpanon
+sivulla näkyvään listaan
+end note
+
+selain->palvelin: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+note over palvelin:
+Palvelin tallettaa uuden muistiinpanon 
+POST-requestin sisällöstä
+end note
+
+palvelin-->selain: 201 created
+
